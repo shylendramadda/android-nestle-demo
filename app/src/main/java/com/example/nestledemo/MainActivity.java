@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
     }
 
     @Override
@@ -29,11 +30,25 @@ public class MainActivity extends AppCompatActivity {
         login_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent navigateToHomePage = new Intent(MainActivity.this, HomePage.class);
-                navigateToHomePage.putExtra("USERNAME", username);
-                MainActivity.this.startActivity(navigateToHomePage);
-
+                if(password.equals("dummy")) Toast.makeText(getApplicationContext(), "Welcome!", Toast.LENGTH_LONG).show();
+                else {
+                    Intent navigateToHomePage = new Intent(MainActivity.this, HomePage.class);
+                    navigateToHomePage.putExtra("USERNAME", username);
+                    MainActivity.this.startActivity(navigateToHomePage);
+                }
             }
         });
+        final Button signup_button = (Button) findViewById(R.id.signup_button);
+        signup_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent navigateToSignupPage = new Intent(MainActivity.this,SignupPage.class);
+                MainActivity.this.startActivity(navigateToSignupPage);
+            }
+        });
+
+
+        }
+
     }
-}

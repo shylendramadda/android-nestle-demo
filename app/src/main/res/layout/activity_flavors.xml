@@ -6,4 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".Flavors">
 
+    <ImageView
+        android:layout_width="225dp"
+        android:layout_height="234dp"
+        android:layout_gravity="left"
+        android:layout_margin="20dp"
+        android:src="@drawable/nlogosm" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
