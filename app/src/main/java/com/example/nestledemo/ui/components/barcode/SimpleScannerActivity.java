@@ -43,6 +43,8 @@ public class SimpleScannerActivity extends AppCompatActivity implements ZXingSca
         Log.v(TAG, format); // Prints the scan format (qrcode, pdf417 etc.)
         AppUtils.showToast(this, "Result: " + rawResultText + " Format: " + format);
         // If you would like to resume scanning, call this method below:
-        mScannerView.resumeCameraPreview(this);
+//        mScannerView.resumeCameraPreview(this);
+        // TODO whatever you want after getting the scan result
+        finish();
     }
 }
