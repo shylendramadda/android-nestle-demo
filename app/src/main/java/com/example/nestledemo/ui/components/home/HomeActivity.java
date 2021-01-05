@@ -1,19 +1,23 @@
 package com.example.nestledemo.ui.components.home;
 
+import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 
-import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.nestledemo.R;
 import com.example.nestledemo.model.Flavor;
+import com.example.nestledemo.ui.components.barcode.SimpleScannerActivity;
 import com.example.nestledemo.ui.components.base.BaseActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class HomeActivity extends BaseActivity {
@@ -23,6 +27,7 @@ public class HomeActivity extends BaseActivity {
 
     private FlavorAdapter flavorAdapter;
     private List<Flavor> flavorList;
+    private final int requestCode = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,11 +38,18 @@ public class HomeActivity extends BaseActivity {
         rvFlavors.setAdapter(flavorAdapter);
 
         loadFlavors();
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED) {
+            ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.CAMERA}, requestCode);
+        }
     }
 
     @OnClick(R.id.cameraIcon)
     public void onCameraClick() {
-        // TODO use any barcode library and scan the QR and get the result
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED) {
+            ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.CAMERA}, requestCode);
+        } else {
+            startActivity(new Intent(this, SimpleScannerActivity.class));
+        }
     }
 
     @Override

@@ -3,6 +3,7 @@
     package="com.example.nestledemo">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="false"
@@ -23,6 +24,7 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".ui.components.base.BaseActivity" />
         <activity android:name=".ui.components.home.HomeActivity" />
+        <activity android:name=".ui.components.barcode.SimpleScannerActivity" />
 
         <activity
             android:name=".HomePage"
