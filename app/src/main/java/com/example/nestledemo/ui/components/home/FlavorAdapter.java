@@ -19,6 +19,7 @@ import butterknife.ButterKnife;
 
 public class FlavorAdapter extends RecyclerView.Adapter<FlavorAdapter.ViewHolder> {
     private List<Flavor> flavorList;
+    int selectedPosition = -1;
 
     public FlavorAdapter(List<Flavor> flavorList) {
         this.flavorList = flavorList;
@@ -36,9 +37,15 @@ public class FlavorAdapter extends RecyclerView.Adapter<FlavorAdapter.ViewHolder
         final Flavor flavor = flavorList.get(position);
         holder.flavorName.setText(flavor.getName());
         holder.flavorImage.setImageResource(flavor.getImage());
+        if (selectedPosition == position) {
+            AppUtils.showViews(holder.selectedImage);
+        } else {
+            AppUtils.hideViews(holder.selectedImage);
+        }
         holder.itemView.setOnClickListener((View.OnClickListener) view -> {
-            // TODO
-            AppUtils.showToast(holder.itemView.getContext(), flavor.getName());
+            selectedPosition = position;
+            notifyDataSetChanged();
+            AppUtils.showToast(holder.itemView.getContext(), "You selected " + flavor.getName());
         });
     }
 
@@ -51,6 +58,8 @@ public class FlavorAdapter extends RecyclerView.Adapter<FlavorAdapter.ViewHolder
     public static class ViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.flavorImage)
         ImageView flavorImage;
+        @BindView(R.id.selectedImage)
+        ImageView selectedImage;
         @BindView(R.id.flavorName)
         TextView flavorName;
 

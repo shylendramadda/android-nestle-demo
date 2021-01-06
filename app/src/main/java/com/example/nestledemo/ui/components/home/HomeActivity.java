@@ -13,12 +13,16 @@ import com.example.nestledemo.R;
 import com.example.nestledemo.model.Flavor;
 import com.example.nestledemo.ui.components.barcode.SimpleScannerActivity;
 import com.example.nestledemo.ui.components.base.BaseActivity;
+import com.example.nestledemo.utils.AppUtils;
+import com.example.nestledemo.utils.PrefUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+
+import static com.example.nestledemo.utils.PrefUtils.IS_LOGIN;
 
 public class HomeActivity extends BaseActivity {
 
@@ -37,18 +41,25 @@ public class HomeActivity extends BaseActivity {
         flavorAdapter = new FlavorAdapter(flavorList);
         rvFlavors.setAdapter(flavorAdapter);
 
+        // Save user login value in shared pref
+        PrefUtils.write(IS_LOGIN, true);
+
         loadFlavors();
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED) {
-            ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.CAMERA}, requestCode);
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, requestCode);
         }
     }
 
     @OnClick(R.id.cameraIcon)
     public void onCameraClick() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED) {
-            ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.CAMERA}, requestCode);
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, requestCode);
         } else {
-            startActivity(new Intent(this, SimpleScannerActivity.class));
+            if (flavorAdapter.selectedPosition == -1) {
+                AppUtils.showToast(this, "Please select a flavor before proceeding");
+            } else {
+                startActivity(new Intent(this, SimpleScannerActivity.class));
+            }
         }
     }
 

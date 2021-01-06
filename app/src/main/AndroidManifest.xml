@@ -13,6 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NestleDemo">
+        <activity android:name=".ui.components.login.LoginActivity"></activity>
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
@@ -25,7 +27,6 @@
         <activity android:name=".ui.components.base.BaseActivity" />
         <activity android:name=".ui.components.home.HomeActivity" />
         <activity android:name=".ui.components.barcode.SimpleScannerActivity" />
-
         <activity
             android:name=".HomePage"
             android:label="@string/title_activity_home_page"
