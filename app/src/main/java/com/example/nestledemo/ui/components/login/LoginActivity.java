@@ -9,6 +9,7 @@ import com.example.nestledemo.R;
 import com.example.nestledemo.ui.components.base.BaseActivity;
 import com.example.nestledemo.ui.components.home.HomeActivity;
 import com.example.nestledemo.utils.AppUtils;
+import com.example.nestledemo.utils.PrefUtils;
 import com.google.android.material.textfield.TextInputLayout;
 
 import butterknife.BindView;
@@ -35,6 +36,7 @@ public class LoginActivity extends BaseActivity {
     TextInputLayout otpLayout;
 
     private int otp;
+    private String mobileNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +45,7 @@ public class LoginActivity extends BaseActivity {
 
     @OnClick(R.id.btnLogin)
     void onLoginClick() {
-        String mobileNumber = etMobile.getText().toString();
+        mobileNumber = etMobile.getText().toString();
         if (mobileNumber.isEmpty()) {
             AppUtils.showToast(this, "Please Enter mobile number");
         } else if (mobileNumber.length() != 13) {
@@ -66,6 +68,7 @@ public class LoginActivity extends BaseActivity {
             AppUtils.showToast(this, "Please enter OTP");
         } else if (Integer.parseInt(enteredOTP) == otp) {
             AppUtils.showToast(this, "Success");
+            PrefUtils.write(PrefUtils.MOBILE_NUM, mobileNumber);
             startActivity(new Intent(this, HomeActivity.class));
             finish();
         } else {

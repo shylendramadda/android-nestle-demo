@@ -17,4 +17,14 @@
     <string name="enter_otp">Enter OTP</string>
     <string name="send_otp">Send OTP</string>
     <string name="validate_otp">Validate OTP</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_logout">Logout</string>
+    <string name="nav_about_us">About us</string>
+    <string name="privacy_policy">Privacy policy</string>
+    <string name="nav_profile">Profile</string>
+    <string name="profile_info">Profile Info</string>
+    <string name="submit">Submit</string>
+    <string name="full_name">Full Name</string>
+    <string name="email">Email Id</string>
+    <string name="address">Address</string>
 </resources>
