@@ -32,6 +32,7 @@ public class HomeActivity extends BaseActivity {
     private FlavorAdapter flavorAdapter;
     private List<Flavor> flavorList;
     private final int requestCode = 1;
+    private Flavor selectedFlavor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +59,7 @@ public class HomeActivity extends BaseActivity {
             if (flavorAdapter.selectedPosition == -1) {
                 AppUtils.showToast(this, "Please select a flavor before proceeding");
             } else {
+                selectedFlavor = flavorList.get(flavorAdapter.selectedPosition);
                 startActivity(new Intent(this, SimpleScannerActivity.class));
             }
         }
