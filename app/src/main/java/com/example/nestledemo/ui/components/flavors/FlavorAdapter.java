@@ -1,4 +1,4 @@
-package com.example.nestledemo.ui.components.home;
+package com.example.nestledemo.ui.components.flavors;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,11 +18,13 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class FlavorAdapter extends RecyclerView.Adapter<FlavorAdapter.ViewHolder> {
-    private List<Flavor> flavorList;
+    private final FlavorListener flavorListener;
+    private final List<Flavor> flavorList;
     int selectedPosition = -1;
 
-    public FlavorAdapter(List<Flavor> flavorList) {
+    public FlavorAdapter(List<Flavor> flavorList, FlavorListener flavorListener) {
         this.flavorList = flavorList;
+        this.flavorListener = flavorListener;
     }
 
     @Override
@@ -45,7 +47,7 @@ public class FlavorAdapter extends RecyclerView.Adapter<FlavorAdapter.ViewHolder
         holder.itemView.setOnClickListener((View.OnClickListener) view -> {
             selectedPosition = position;
             notifyDataSetChanged();
-            AppUtils.showToast(holder.itemView.getContext(), "You selected " + flavor.getName());
+            flavorListener.onItemSelected(position);
         });
     }
 
@@ -67,5 +69,9 @@ public class FlavorAdapter extends RecyclerView.Adapter<FlavorAdapter.ViewHolder
             super(itemView);
             ButterKnife.bind(this, itemView);
         }
+    }
+
+    interface FlavorListener {
+        void onItemSelected(int position);
     }
 }

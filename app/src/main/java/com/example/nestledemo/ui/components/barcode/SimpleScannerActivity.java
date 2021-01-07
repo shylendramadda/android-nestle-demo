@@ -1,10 +1,12 @@
 package com.example.nestledemo.ui.components.barcode;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.nestledemo.ui.components.flavors.FlavorsActivity;
 import com.example.nestledemo.utils.AppUtils;
 import com.google.zxing.Result;
 
@@ -44,7 +46,7 @@ public class SimpleScannerActivity extends AppCompatActivity implements ZXingSca
         AppUtils.showToast(this, "Result: " + rawResultText + " Format: " + format);
         // If you would like to resume scanning, call this method below:
 //        mScannerView.resumeCameraPreview(this);
-        // TODO whatever you want after getting the scan result
+        startActivity(new Intent(this, FlavorsActivity.class));
         finish();
     }
 }

@@ -3,50 +3,42 @@ package com.example.nestledemo.ui.components.home;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.nestledemo.ProfileActivity;
+import com.example.nestledemo.ui.components.profile.ProfileActivity;
 import com.example.nestledemo.R;
-import com.example.nestledemo.model.Flavor;
 import com.example.nestledemo.ui.components.barcode.SimpleScannerActivity;
-import com.example.nestledemo.ui.components.base.BaseActivity;
 import com.example.nestledemo.ui.components.login.LoginActivity;
-import com.example.nestledemo.utils.AppUtils;
 import com.example.nestledemo.utils.PrefUtils;
 import com.google.android.material.navigation.NavigationView;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 import static com.example.nestledemo.utils.PrefUtils.IS_LOGIN;
 import static com.example.nestledemo.utils.PrefUtils.MOBILE_NUM;
 
-public class HomeActivity extends BaseActivity {
+public class HomeActivity extends AppCompatActivity {
 
-    @BindView(R.id.rvFlavors)
-    RecyclerView rvFlavors;
+
     @BindView(R.id.drawerLayout)
     DrawerLayout drawerLayout;
     @BindView(R.id.navView)
     NavigationView navigationView;
 
-    private FlavorAdapter flavorAdapter;
-    private List<Flavor> flavorList;
     private final int requestCode = 1;
-    private Flavor selectedFlavor;
     private Toolbar toolbar;
     // index to identify current nav menu item
     public static int navItemIndex = 0;
@@ -57,12 +49,10 @@ public class HomeActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_home);
+        ButterKnife.bind(this);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        flavorList = new ArrayList<>();
-        flavorAdapter = new FlavorAdapter(flavorList);
-        rvFlavors.setAdapter(flavorAdapter);
 
         // Save user login value in shared pref
         PrefUtils.write(IS_LOGIN, true);
@@ -72,7 +62,6 @@ public class HomeActivity extends BaseActivity {
         profileNameTV.setText(name);
 
         setUpNavigationView();
-        loadFlavors();
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, requestCode);
         }
@@ -98,15 +87,14 @@ public class HomeActivity extends BaseActivity {
                         CURRENT_TAG = TAG_PROFILE;
                         startActivity(new Intent(HomeActivity.this, ProfileActivity.class));
                         break;
+                        // TODO
                     case R.id.nav_about_us:
                         drawerLayout.closeDrawers();
-                        // launch new intent instead of loading fragment
-//                        startActivity(new Intent(this, AboutUsActivity.class));
+                        startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://www.nestle.com/")));
                         return true;
                     case R.id.nav_privacy_policy:
                         drawerLayout.closeDrawers();
-                        // launch new intent instead of loading fragment
-//                        startActivity(new Intent(this, PrivacyPolicyActivity.class));
+                        startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://www.nestle.com/aboutus/businessprinciples/privacy")));
                         return true;
                     case R.id.nav_logout:
                         drawerLayout.closeDrawers();
@@ -151,31 +139,7 @@ public class HomeActivity extends BaseActivity {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, requestCode);
         } else {
-            if (flavorAdapter.selectedPosition == -1) {
-                AppUtils.showToast(this, "Please select a flavor before proceeding");
-            } else {
-                selectedFlavor = flavorList.get(flavorAdapter.selectedPosition);
-                startActivity(new Intent(this, SimpleScannerActivity.class));
-            }
+            startActivity(new Intent(this, SimpleScannerActivity.class));
         }
-    }
-
-    private void loadFlavors() {
-        Flavor flavor1 = new Flavor("Cappucino", R.drawable.cappucino);
-        Flavor flavor2 = new Flavor("Chalilatte", R.drawable.chailatte);
-        Flavor flavor3 = new Flavor("NestleCoffee", R.drawable.coffeecup);
-        Flavor flavor4 = new Flavor("Espresso", R.drawable.espresso);
-        Flavor flavor5 = new Flavor("Flat White", R.drawable.flatwhite);
-        flavorList.add(flavor1);
-        flavorList.add(flavor2);
-        flavorList.add(flavor3);
-        flavorList.add(flavor4);
-        flavorList.add(flavor5);
-        flavorAdapter.notifyDataSetChanged();
-    }
-
-    @Override
-    protected int getLayoutResourceId() {
-        return R.layout.activity_home;
     }
 }

@@ -5,20 +5,21 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.nestledemo.R;
-import com.example.nestledemo.ui.components.base.BaseActivity;
 import com.example.nestledemo.ui.components.home.HomeActivity;
 import com.example.nestledemo.ui.components.login.LoginActivity;
 import com.example.nestledemo.utils.PrefUtils;
 
 import static com.example.nestledemo.utils.PrefUtils.IS_LOGIN;
 
-public class SplashActivity extends BaseActivity {
+public class SplashActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setContentView(R.layout.activity_splash);
         PrefUtils.init(this);
 
         long SPLASH_DELAY = 2000L;
@@ -33,10 +34,5 @@ public class SplashActivity extends BaseActivity {
             finish();
         }, SPLASH_DELAY); // 2 seconds
 
-    }
-
-    @Override
-    protected int getLayoutResourceId() {
-        return R.layout.activity_splash;
     }
 }

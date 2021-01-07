@@ -19,13 +19,14 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".LoyaltyRewards"
+            android:name=".ui.components.rewards.LoyaltyRewards"
             android:configChanges="orientation|keyboardHidden|smallestScreenSize" />
         <activity
-            android:name=".Flavors"
+            android:name=".ui.components.flavors.FlavorsActivity"
             android:configChanges="orientation|keyboardHidden|smallestScreenSize" />
         <activity
-            android:name=".ProfileActivity"
+            android:name=".ui.components.profile.ProfileActivity"
+            android:label="@string/nav_profile"
             android:configChanges="orientation|keyboardHidden|smallestScreenSize" />
         <activity
             android:name=".ui.components.base.BaseActivity"
@@ -37,9 +38,11 @@
             android:name=".ui.components.home.HomeActivity"
             android:configChanges="orientation|keyboardHidden|smallestScreenSize"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-
         <activity
             android:name=".ui.components.barcode.SimpleScannerActivity"
+            android:configChanges="orientation|keyboardHidden|smallestScreenSize" />
+        <activity
+            android:name=".ui.components.addons.AddonActivity"
             android:configChanges="orientation|keyboardHidden|smallestScreenSize" />
         <activity
             android:name=".ui.components.splash.SplashActivity"

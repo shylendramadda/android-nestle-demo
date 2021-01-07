@@ -27,4 +27,8 @@
     <string name="full_name">Full Name</string>
     <string name="email">Email Id</string>
     <string name="address">Address</string>
+    <string name="other">Other</string>
+    <string name="nav_rewards">Rewards</string>
+    <string name="nav_stores">"Near by stores "</string>
+    <string name="nav_social">Social</string>
 </resources>

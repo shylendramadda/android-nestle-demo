@@ -1,8 +1,10 @@
-package com.example.nestledemo;
+package com.example.nestledemo.ui.components.rewards;
+
+import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
+import com.example.nestledemo.R;
 
 public class LoyaltyRewards extends AppCompatActivity {
 
