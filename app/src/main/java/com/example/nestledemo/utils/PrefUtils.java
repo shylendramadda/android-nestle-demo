@@ -29,6 +29,16 @@ public class PrefUtils {
         prefsEditor.apply();
     }
 
+    public static int read(String key, int defValue) {
+        return mSharedPref.getInt(key, defValue);
+    }
+
+    public static void write(String key, int value) {
+        SharedPreferences.Editor prefsEditor = mSharedPref.edit();
+        prefsEditor.putInt(key, value);
+        prefsEditor.apply();
+    }
+
     public static boolean read(String key, boolean defValue) {
         return mSharedPref.getBoolean(key, defValue);
     }
