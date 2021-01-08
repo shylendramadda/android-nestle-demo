@@ -6,6 +6,7 @@ import android.os.Bundle;
 import com.example.nestledemo.BuildConfig;
 import com.example.nestledemo.R;
 import com.example.nestledemo.ui.components.base.BaseActivity;
+import com.example.nestledemo.ui.components.payment.PaymentActivity;
 
 import butterknife.OnClick;
 
@@ -29,5 +30,10 @@ public class AddonActivity extends BaseActivity {
                 "Hey check out my app Nestle at: https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID);
         sendIntent.setType("text/plain");
         startActivity(sendIntent);
+    }
+
+    @OnClick(R.id.btnSkip)
+    void onSkip() {
+        startActivity(new Intent(this, PaymentActivity.class));
     }
 }

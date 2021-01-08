@@ -33,7 +33,6 @@ import static com.example.nestledemo.utils.PrefUtils.MOBILE_NUM;
 
 public class HomeActivity extends AppCompatActivity {
 
-
     @BindView(R.id.drawerLayout)
     DrawerLayout drawerLayout;
     @BindView(R.id.navView)
@@ -97,7 +96,6 @@ public class HomeActivity extends AppCompatActivity {
                         CURRENT_TAG = TAG_REWARDS;
                         startActivity(new Intent(HomeActivity.this, RewardsActivity.class));
                         break;
-
                     case R.id.nav_stores:
                         navItemIndex = 3;
                         CURRENT_TAG = TAG_STORES;
@@ -108,7 +106,6 @@ public class HomeActivity extends AppCompatActivity {
                         CURRENT_TAG = TAG_SOCIAL;
                         startActivity(new Intent(HomeActivity.this, ProfileActivity.class));
                         break;
-
                     case R.id.nav_about_us:
                         drawerLayout.closeDrawers();
                         startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://www.nestle.com/")));

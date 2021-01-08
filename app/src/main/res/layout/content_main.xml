@@ -23,7 +23,7 @@
         android:layout_gravity="bottom"
         android:layout_margin="30dp"
         app:backgroundTint="@color/purple_500"
-        app:srcCompat="@android:drawable/ic_menu_camera"
+        app:srcCompat="@drawable/ic_qr_code_scanner"
         tools:ignore="ContentDescription" />
 
 </RelativeLayout>
