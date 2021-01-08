@@ -20,6 +20,7 @@ import com.example.nestledemo.ui.components.profile.ProfileActivity;
 import com.example.nestledemo.R;
 import com.example.nestledemo.ui.components.barcode.SimpleScannerActivity;
 import com.example.nestledemo.ui.components.login.LoginActivity;
+import com.example.nestledemo.ui.components.rewards.RewardsActivity;
 import com.example.nestledemo.utils.PrefUtils;
 import com.google.android.material.navigation.NavigationView;
 
@@ -44,6 +45,9 @@ public class HomeActivity extends AppCompatActivity {
     public static int navItemIndex = 0;
     private static final String TAG_HOME = "home";
     private static final String TAG_PROFILE = "profile";
+    private static final String TAG_REWARDS = "rewards";
+    private static final String TAG_STORES = "stores";
+    private static final String TAG_SOCIAL = "social";
     public static String CURRENT_TAG = TAG_HOME;
 
     @Override
@@ -88,6 +92,23 @@ public class HomeActivity extends AppCompatActivity {
                         startActivity(new Intent(HomeActivity.this, ProfileActivity.class));
                         break;
                         // TODO
+                    case R.id.nav_rewards:
+                        navItemIndex = 2;
+                        CURRENT_TAG = TAG_REWARDS;
+                        startActivity(new Intent(HomeActivity.this, RewardsActivity.class));
+                        break;
+
+                    case R.id.nav_stores:
+                        navItemIndex = 3;
+                        CURRENT_TAG = TAG_STORES;
+                        startActivity(new Intent(HomeActivity.this, ProfileActivity.class));
+                        break;
+                    case R.id.nav_social:
+                        navItemIndex = 4;
+                        CURRENT_TAG = TAG_SOCIAL;
+                        startActivity(new Intent(HomeActivity.this, ProfileActivity.class));
+                        break;
+
                     case R.id.nav_about_us:
                         drawerLayout.closeDrawers();
                         startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://www.nestle.com/")));

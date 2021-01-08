@@ -9,37 +9,40 @@
 
         <item
             android:id="@+id/nav_profile"
-            android:icon="@android:drawable/ic_menu_manage"
+            android:icon="@drawable/ic_profile"
             android:title="@string/nav_profile" />
 
         <item
             android:id="@+id/nav_rewards"
-            android:icon="@android:drawable/ic_menu_manage"
+            android:icon="@drawable/ic_loyalty"
             android:title="@string/nav_rewards" />
 
         <item
             android:id="@+id/nav_stores"
-            android:icon="@android:drawable/ic_menu_manage"
+            android:icon="@drawable/ic_store"
             android:title="@string/nav_stores" />
 
         <item
             android:id="@+id/nav_social"
-            android:icon="@android:drawable/ic_menu_manage"
+            android:icon="@drawable/ic_social"
             android:title="@string/nav_social" />
     </group>
 
-    <item android:title="@string/other">
+    <item android:title="@string/other"
+          android:icon="@drawable/ic_other">
         <menu>
             <item
                 android:id="@+id/nav_about_us"
-                android:title="@string/nav_about_us" />
+                android:title="@string/nav_about_us"
+                android:icon="@drawable/ic_about"/>
             <item
                 android:id="@+id/nav_privacy_policy"
-                android:title="@string/privacy_policy" />
+                android:title="@string/privacy_policy"
+                android:icon="@drawable/ic_privacy"/>
             <item
                 android:id="@+id/nav_logout"
-                android:icon="@android:drawable/ic_media_next"
-                android:title="@string/nav_logout" />
+                android:icon="@drawable/ic_logout"
+                android:title="@string/nav_logout"/>
         </menu>
     </item>
 

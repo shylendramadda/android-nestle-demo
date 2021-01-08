@@ -38,7 +38,7 @@ public class FlavorsActivity extends BaseActivity implements FlavorAdapter.Flavo
     private void loadFlavors() {
         Flavor flavor1 = new Flavor("Cappucino", R.drawable.cappucino);
         Flavor flavor2 = new Flavor("Chalilatte", R.drawable.chailatte);
-        Flavor flavor3 = new Flavor("NestleCoffee", R.drawable.coffeecup);
+        Flavor flavor3 = new Flavor("NestleCoffee", R.drawable.mocha);
         Flavor flavor4 = new Flavor("Espresso", R.drawable.espresso);
         Flavor flavor5 = new Flavor("Flat White", R.drawable.flatwhite);
         flavorList.add(flavor1);

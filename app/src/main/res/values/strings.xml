@@ -31,4 +31,6 @@
     <string name="nav_rewards">Rewards</string>
     <string name="nav_stores">"Near by stores "</string>
     <string name="nav_social">Social</string>
+    <string name="Rewards">Rewards</string>
+    <string name="Rewardpoints">Rewardpoints</string>
 </resources>
