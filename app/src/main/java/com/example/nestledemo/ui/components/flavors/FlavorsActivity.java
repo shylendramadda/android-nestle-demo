@@ -74,12 +74,12 @@ public class FlavorsActivity extends BaseActivity implements FlavorAdapter.Flavo
         Button btnSubmit = (Button) dialog.findViewById(R.id.btnSubmit);
         RadioGroup rdGroup = (RadioGroup) dialog.findViewById(R.id.rdGroup);
         btnSubmit.setOnClickListener(v -> {
-            dialog.dismiss();
             int selectedId = rdGroup.getCheckedRadioButtonId();
             RadioButton radioButton = (RadioButton) dialog.findViewById(selectedId);
             if (selectedId == -1) {
                 AppUtils.showToast(this, "Please select your choice");
             } else {
+                dialog.dismiss();
                 AppUtils.showToast(this, "Selected " + radioButton.getText());
                 startActivity(new Intent(FlavorsActivity.this, AddonActivity.class));
             }
