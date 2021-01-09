@@ -41,5 +41,7 @@
             android:layout_alignEnd="@+id/flavorImage"
             android:src="@drawable/selected_icon" />
 
+
+
     </RelativeLayout>
 </androidx.cardview.widget.CardView>
