@@ -1,7 +1,12 @@
 package com.example.nestledemo.ui.components.flavors;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Window;
+import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -23,7 +28,6 @@ public class FlavorsActivity extends BaseActivity implements FlavorAdapter.Flavo
 
     private FlavorAdapter flavorAdapter;
     private List<Flavor> flavorList;
-    private Flavor selectedFlavor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,8 +60,30 @@ public class FlavorsActivity extends BaseActivity implements FlavorAdapter.Flavo
 
     @Override
     public void onItemSelected(int position) {
-        selectedFlavor = flavorList.get(position);
+        Flavor selectedFlavor = flavorList.get(position);
         AppUtils.showToast(this, "You selected " + selectedFlavor.getName());
-        startActivity(new Intent(this, AddonActivity.class));
+        showSizeDialog();
+    }
+
+    public void showSizeDialog() {
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setCancelable(true);
+        dialog.setContentView(R.layout.custom_dialog_cup_size);
+
+        Button btnSubmit = (Button) dialog.findViewById(R.id.btnSubmit);
+        RadioGroup rdGroup = (RadioGroup) dialog.findViewById(R.id.rdGroup);
+        btnSubmit.setOnClickListener(v -> {
+            dialog.dismiss();
+            int selectedId = rdGroup.getCheckedRadioButtonId();
+            RadioButton radioButton = (RadioButton) dialog.findViewById(selectedId);
+            if (selectedId == -1) {
+                AppUtils.showToast(this, "Please select your choice");
+            } else {
+                AppUtils.showToast(this, "Selected " + radioButton.getText());
+                startActivity(new Intent(FlavorsActivity.this, AddonActivity.class));
+            }
+        });
+        dialog.show();
     }
 }

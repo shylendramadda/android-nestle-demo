@@ -56,6 +56,7 @@ public class HomeActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        PrefUtils.init(this);
 
         // Save user login value in shared pref
         PrefUtils.write(IS_LOGIN, true);

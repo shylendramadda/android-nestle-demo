@@ -56,4 +56,9 @@
     <string name="card_number">Card number</string>
     <string name="total_amount">Total Amount</string>
     <string name="_5">&#8364; 5</string>
+    <string name="please_select_a_cup_size">Please select a cup size</string>
+    <string name="small_1">Small ($1)</string>
+    <string name="medium_2">Medium ($2)</string>
+    <string name="large_3">Large ($3)</string>
+    <string name="select">Select</string>
 </resources>

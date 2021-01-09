@@ -41,6 +41,7 @@ public class LoginActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        PrefUtils.init(this);
     }
 
     @OnClick(R.id.btnLogin)
