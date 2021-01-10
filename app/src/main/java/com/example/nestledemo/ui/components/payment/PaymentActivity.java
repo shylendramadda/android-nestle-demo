@@ -1,17 +1,12 @@
 package com.example.nestledemo.ui.components.payment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.nestledemo.R;
 import com.example.nestledemo.ui.components.base.BaseActivity;
-import com.example.nestledemo.ui.components.coffeedispense.CoffeeDispenseActivity;
-import com.example.nestledemo.ui.components.home.HomeActivity;
 import com.example.nestledemo.utils.AppUtils;
-import com.example.nestledemo.utils.PrefUtils;
-import com.google.android.material.textfield.TextInputLayout;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -25,7 +20,7 @@ public class PaymentActivity extends BaseActivity {
     Button btnGpay;
 
     @BindView(R.id.btnApay)
-    EditText btnApay;
+    Button btnApay;
 
     @BindView(R.id.etCardNumber)
     EditText etCardNumber;
@@ -43,7 +38,7 @@ public class PaymentActivity extends BaseActivity {
     Button btnProceed;
 
     private int Success;
-    private String CardNumber;
+    private String cardNumber;
     private String CardName;
     private int Expiry;
     private int CVV;
@@ -52,16 +47,14 @@ public class PaymentActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        PrefUtils.init(this);
     }
 
     @OnClick(R.id.btnProceed)
     void onButtonClicked() {
-        CardNumber = etCardNumber.getText().toString();
-        if (CardNumber.isEmpty()) {
+        cardNumber = etCardNumber.getText().toString();
+        if (cardNumber.isEmpty()) {
             AppUtils.showToast(this, "Please Enter Card Number");
-        } else if (CardNumber.length() != 16) ;
-        {
+        } else if (cardNumber.length() != 16) {
             AppUtils.showToast(this, "Please Enter valid Card Number");
         }
     }

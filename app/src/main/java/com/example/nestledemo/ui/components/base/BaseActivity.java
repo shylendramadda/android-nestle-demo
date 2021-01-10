@@ -5,6 +5,8 @@ import android.view.MenuItem;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.nestledemo.utils.PrefUtils;
+
 import butterknife.ButterKnife;
 
 public abstract class BaseActivity extends AppCompatActivity {
@@ -15,6 +17,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         setContentView(getLayoutResourceId());
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         ButterKnife.bind(this);
+        PrefUtils.init(this);
     }
 
     @Override

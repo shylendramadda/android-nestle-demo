@@ -34,21 +34,14 @@ public class AddonActivity extends BaseActivity {
     }
 
     @OnClick(R.id.btnSkip)
-    void onSkip()
-    {
-        Intent skipToPay = new Intent();
-        skipToPay.setClass(this,PaymentActivity.class);
-        Toast.makeText(getApplicationContext(),"You have skipped the UpSale",Toast.LENGTH_LONG).show();
-        startActivity(skipToPay);
+    void onSkip() {
+        Toast.makeText(getApplicationContext(), "You have skipped the UpSale", Toast.LENGTH_LONG).show();
+        startActivity(new Intent(this, PaymentActivity.class));
     }
 
     @OnClick(R.id.btnProceed)
-    void onProceed()
-    {
-        Intent proceedToPay = new Intent();
-        proceedToPay.setClass(this,PaymentActivity.class);
-        Toast.makeText(getApplicationContext(),"You have added the UpSale",Toast.LENGTH_LONG).show();
-        startActivity(proceedToPay);
-
+    void onProceed() {
+        Toast.makeText(getApplicationContext(), "You have added the UpSale", Toast.LENGTH_LONG).show();
+        startActivity(new Intent(this, PaymentActivity.class));
     }
 }
