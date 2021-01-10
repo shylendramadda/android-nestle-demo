@@ -61,4 +61,7 @@
     <string name="medium_2">Medium ($2)</string>
     <string name="large_3">Large ($3)</string>
     <string name="select">Select</string>
+    <string name="view_all_your_reward_points_here">View all your REWARD POINTS here</string>
+    <string name="promo">Promo Code</string>
+    <string name="refer_and_earn_points">refer and earn points</string>
 </resources>

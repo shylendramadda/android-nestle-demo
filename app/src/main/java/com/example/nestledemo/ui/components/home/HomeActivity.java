@@ -21,6 +21,8 @@ import com.example.nestledemo.R;
 import com.example.nestledemo.ui.components.barcode.SimpleScannerActivity;
 import com.example.nestledemo.ui.components.login.LoginActivity;
 import com.example.nestledemo.ui.components.rewards.RewardsActivity;
+import com.example.nestledemo.ui.components.social.SocialActivity;
+import com.example.nestledemo.ui.components.stores.StoresActivity;
 import com.example.nestledemo.utils.PrefUtils;
 import com.google.android.material.navigation.NavigationView;
 
@@ -100,12 +102,12 @@ public class HomeActivity extends AppCompatActivity {
                     case R.id.nav_stores:
                         navItemIndex = 3;
                         CURRENT_TAG = TAG_STORES;
-                        startActivity(new Intent(HomeActivity.this, ProfileActivity.class));
+                        startActivity(new Intent(HomeActivity.this, StoresActivity.class));
                         break;
                     case R.id.nav_social:
                         navItemIndex = 4;
                         CURRENT_TAG = TAG_SOCIAL;
-                        startActivity(new Intent(HomeActivity.this, ProfileActivity.class));
+                        startActivity(new Intent(HomeActivity.this, SocialActivity.class));
                         break;
                     case R.id.nav_about_us:
                         drawerLayout.closeDrawers();

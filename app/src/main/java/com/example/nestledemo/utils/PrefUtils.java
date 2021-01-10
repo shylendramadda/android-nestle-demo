@@ -4,11 +4,17 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import java.security.PublicKey;
+
 public class PrefUtils {
 
     private static SharedPreferences mSharedPref;
     public static final String IS_LOGIN = "IS_LOGIN";
     public static final String MOBILE_NUM = "MOBILE_NUM";
+    public static final String CARD_NUM = "CARD_NUM";
+    public static final String CARD_NAME = "CARD_NAME";
+    public static final String CARD_EXP = "CARD_EXP";
+    public static final String CARD_CVV = "CARD_CVV";
 
     private PrefUtils() {
     }

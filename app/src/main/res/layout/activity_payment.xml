@@ -18,6 +18,7 @@
             android:orientation="horizontal">
 
             <Button
+                android:id="@+id/btnCard"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
@@ -26,6 +27,7 @@
                 tools:ignore="ButtonStyle" />
 
             <Button
+                android:id="@+id/btnGpay"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
@@ -35,6 +37,7 @@
                 tools:ignore="ButtonStyle" />
 
             <Button
+                android:id="@+id/btnApay"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
@@ -81,7 +84,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/holder_name"
                 android:inputType="textPersonName"
-                android:maxLength="16" />
+                android:maxLength="25" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -104,7 +107,7 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/mm_yy"
                     android:inputType="number|date"
-                    android:maxLength="16" />
+                    android:maxLength="5" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -121,7 +124,7 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/cvv"
                     android:inputType="number"
-                    android:maxLength="16" />
+                    android:maxLength="3" />
 
             </com.google.android.material.textfield.TextInputLayout>
 

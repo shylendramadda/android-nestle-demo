@@ -4,6 +4,48 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/teal_700"
     tools:context=".ui.components.rewards.RewardsActivity">
+
+    <TextView
+        android:id="@+id/tvRefer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/view_all_your_reward_points_here"
+        android:layout_marginStart="50sp"
+        android:textSize="18sp"
+        android:layout_margin="0dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="50dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etPromo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/promo"
+            android:inputType="number"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/refer_and_earn_points"
+        android:layout_marginHorizontal="60dp"
+        android:layout_marginTop="130dp"
+        android:textAllCaps="true"
+        android:textSize="18sp"
+        android:textStyle="bold"/>
+
+
+
+
+
 
 </RelativeLayout>
