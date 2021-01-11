@@ -61,7 +61,12 @@
     <string name="medium_2">Medium ($2)</string>
     <string name="large_3">Large ($3)</string>
     <string name="select">Select</string>
-    <string name="view_all_your_reward_points_here">View all your REWARD POINTS here</string>
+    <string name="view_all_your_nestle_reward_points_here">View all your Nestle REWARD POINTS here</string>
     <string name="promo">Promo Code</string>
     <string name="refer_and_earn_points">refer and earn points</string>
+    <string name="apply">apply</string>
+    <string name="share_your_promo_code_to_earn_points">Share your promo code to earn points</string>
+    <string name="check_your_in_store_points_here">Check your in store points here</string>
+    <string name="check_your_fuel_points_here">Check your fuel points here</string>
+    <string name="check_more_about_loyalty_rewards_at_https_www_nestle_com">Check more about Loyalty Rewards at https://www.nestle.com</string>
 </resources>
