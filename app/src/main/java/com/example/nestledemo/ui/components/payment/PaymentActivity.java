@@ -9,7 +9,6 @@ import com.example.nestledemo.R;
 import com.example.nestledemo.ui.components.base.BaseActivity;
 import com.example.nestledemo.ui.components.coffeedispense.CoffeeDispenseActivity;
 import com.example.nestledemo.utils.AppUtils;
-import com.google.android.material.textfield.TextInputLayout;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -74,10 +73,11 @@ public class PaymentActivity extends BaseActivity {
         } else if (cardCVV.length() != 3) {
             AppUtils.showToast(this, "Please Enter valid CVV");
         } else {
-            AppUtils.showToast(this,"Card added Successfully");
-            startActivity(new Intent(this,CoffeeDispenseActivity.class));
+            AppUtils.showToast(this, "Card added Successfully");
+            startActivity(new Intent(this, CoffeeDispenseActivity.class));
         }
     }
+
     @Override
     protected int getLayoutResourceId() {
         return R.layout.activity_payment;

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.components.home.HomeActivity">
+    tools:context=".ui.components.dashboardItem.HomeActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -20,16 +20,18 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvHomeImages"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/black"
-        android:nestedScrollingEnabled="true"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:spanCount="1"
-        tools:itemCount="6"
-        tools:listitem="@layout/content_main" />
+    <include layout="@layout/content_main" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/cameraIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:layout_margin="30dp"
+        app:backgroundTint="@color/purple_500"
+        app:srcCompat="@drawable/ic_qr_code_scanner"
+        tools:ignore="ContentDescription" />
 
 </RelativeLayout>

@@ -1,11 +1,11 @@
 package com.example.nestledemo.model;
 
-public class Home {
+public class DashboardItem {
 
     private String name;
     private int image;
 
-    public Home(String name, int image) {
+    public DashboardItem(String name, int image) {
         this.name = name;
         this.image = image;
     }

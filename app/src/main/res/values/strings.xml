@@ -69,4 +69,6 @@
     <string name="check_your_in_store_points_here">Check your in store points here</string>
     <string name="check_your_fuel_points_here">Check your fuel points here</string>
     <string name="check_more_about_loyalty_rewards_at_https_www_nestle_com">Check more about Loyalty Rewards at https://www.nestle.com</string>
+    <string name="dispense_hint">Please place your cup and press the start button below to dispense coffee</string>
+    <string name="start_to_dispense">Start to dispense</string>
 </resources>

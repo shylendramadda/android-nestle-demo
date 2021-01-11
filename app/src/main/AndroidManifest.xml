@@ -13,7 +13,7 @@
         android:roundIcon="@drawable/app_logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.NestleDemo">
-        <activity android:name=".ui.components.social.SocialActivity"></activity>
+        <activity android:name=".ui.components.social.SocialActivity"/>
         <activity android:name=".ui.components.stores.StoresActivity" />
         <activity android:name=".ui.components.coffeedispense.CoffeeDispenseActivity" />
 

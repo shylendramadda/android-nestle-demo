@@ -4,34 +4,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#FEFBDE"
     tools:context=".ui.components.rewards.RewardsActivity">
 
     <TextView
         android:id="@+id/tvRefer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_marginStart="50dp"
         android:text="@string/view_all_your_nestle_reward_points_here"
-        android:layout_marginStart="50sp"
+        android:textAllCaps="true"
         android:textColor="@color/black"
         android:textSize="15sp"
-        android:layout_margin="20dp"
-        android:textAllCaps="true"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etPromoTIL"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="55dp">
+        android:layout_below="@+id/tvRefer"
+        android:layout_marginHorizontal="20dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etPromo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/promo"
             android:layout_marginHorizontal="0dp"
-            android:inputType="number"/>
+            android:hint="@string/promo"
+            android:inputType="number" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -39,76 +39,92 @@
         android:id="@+id/btApply"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/etPromoTIL"
+        android:layout_alignParentEnd="true"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="120dp"
-        android:text="@string/apply"
-        android:padding="10dp"/>
+        android:padding="10dp"
+        android:text="@string/apply" />
 
     <TextView
+        android:id="@+id/titleEarn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/btApply"
+        android:layout_marginHorizontal="20dp"
         android:text="@string/refer_and_earn_points"
-        android:textColor="@color/black"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="180dp"
         android:textAllCaps="true"
+        android:textColor="@color/black"
         android:textSize="18sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/etShare"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/btnShare"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/titleEarn"
         android:layout_marginHorizontal="20dp"
-        android:textColorHint="@color/black"
+        android:layout_marginTop="20dp"
         android:backgroundTint="@color/black"
-        android:hint="@string/share_your_promo_code_to_earn_points"
-        android:layout_marginVertical="200sp"/>
+        android:drawableEnd="@android:drawable/ic_menu_share"
+        android:text="@string/share_your_promo_code_to_earn_points"
+        android:textColor="@color/white" />
 
     <ImageButton
         android:id="@+id/ibGas"
         android:layout_width="90dp"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/btnShare"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="260dp"
-        android:src="@drawable/ic_gasstation"/>
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_gasstation"
+        tools:ignore="ContentDescription" />
 
     <EditText
-        android:layout_width="wrap_content"
+        android:id="@+id/flueET"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:layout_toEndOf="@+id/ibGas"
+        android:layout_below="@+id/btnShare"
         android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@+id/ibGas"
         android:backgroundTint="@color/black"
-        android:layout_marginTop="260dp"
-        android:text="@string/check_your_fuel_points_here"/>
+        android:text="@string/check_your_fuel_points_here"
+        android:textColor="@color/black"
+        tools:ignore="Autofill,LabelFor,TextFields" />
 
     <ImageButton
         android:id="@+id/ibInStore"
         android:layout_width="90dp"
         android:layout_height="40dp"
+        android:layout_below="@+id/ibGas"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="350dp"
-        android:src="@drawable/ic_instore"/>
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_instore"
+        tools:ignore="ContentDescription" />
 
     <EditText
-        android:layout_width="wrap_content"
+        android:id="@+id/pointsET"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/flueET"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="20dp"
         android:layout_toEndOf="@+id/ibInStore"
-        android:textColor="@color/black"
         android:backgroundTint="@color/black"
         android:text="@string/check_your_in_store_points_here"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginTop="350dp"/>
+        android:textColor="@color/black"
+        tools:ignore="Autofill,LabelFor,TextFields" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:text="@string/check_more_about_loyalty_rewards_at_https_www_nestle_com"
+        android:layout_below="@+id/pointsET"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="450dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/check_more_about_loyalty_rewards_at_https_www_nestle_com"
+        android:textColor="@color/black"
         android:textSize="18sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
 </RelativeLayout>
