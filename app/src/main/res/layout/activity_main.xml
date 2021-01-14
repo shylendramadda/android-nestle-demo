@@ -45,6 +45,8 @@
             android:layout_marginLeft="60dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="60dp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/black"
             android:background="@drawable/my_button"
             android:text="Login" />
 
@@ -55,8 +57,10 @@
             android:layout_marginLeft="60dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="60dp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/black"
             android:background="@drawable/signup_button"
-            android:text="Signup" />
+            android:text="@string/signup" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

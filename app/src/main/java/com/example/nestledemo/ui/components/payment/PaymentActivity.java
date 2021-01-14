@@ -2,13 +2,17 @@ package com.example.nestledemo.ui.components.payment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.nestledemo.R;
 import com.example.nestledemo.ui.components.base.BaseActivity;
 import com.example.nestledemo.ui.components.coffeedispense.CoffeeDispenseActivity;
 import com.example.nestledemo.utils.AppUtils;
+import com.example.nestledemo.utils.ConstantUtils;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -39,6 +43,9 @@ public class PaymentActivity extends BaseActivity {
     @BindView(R.id.btnProceed)
     Button btnProceed;
 
+    @BindView(R.id.amountTV)
+    TextView amountTV;
+
     private String cardNumber;
     private String cardName;
     private String cardExpiry;
@@ -48,6 +55,19 @@ public class PaymentActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        String selectedSize = getIntent().getStringExtra("selectedSize");
+
+        String amount = ConstantUtils.euroSymbol + " 1";
+        if (!TextUtils.isEmpty(selectedSize)) {
+            if (selectedSize.contains("Small")) {
+                amount = ConstantUtils.euroSymbol + " 1";
+            } else if (selectedSize.contains("Medium")) {
+                amount = ConstantUtils.euroSymbol + " 2";
+            } else if (selectedSize.contains("Large")) {
+                amount = ConstantUtils.euroSymbol + " 3";
+            }
+        }
+        amountTV.setText(Html.fromHtml(amount));
     }
 
     @OnClick(R.id.btnProceed)

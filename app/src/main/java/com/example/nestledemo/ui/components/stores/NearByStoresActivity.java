@@ -1,8 +1,5 @@
 package com.example.nestledemo.ui.components.stores;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.graphics.Point;
 import android.os.Bundle;
 
 import com.example.nestledemo.R;
@@ -12,18 +9,14 @@ import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.Projection;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.ArrayList;
 
-import butterknife.BindView;
-
-public class StoresActivity extends BaseActivity implements OnMapReadyCallback {
+public class NearByStoresActivity extends BaseActivity implements OnMapReadyCallback {
 
     GoogleMap googleMap;
 
@@ -46,10 +39,6 @@ public class StoresActivity extends BaseActivity implements OnMapReadyCallback {
     @Override
     public void onMapReady(GoogleMap googleMap) {
         this.googleMap = googleMap;
-//        LatLng sydney = new LatLng(-33.852, 151.211);
-//        googleMap.addMarker(new MarkerOptions()
-//                .position(sydney)
-//                .title("Marker in Sydney"));
         ArrayList<MarkerData> markersArray = new ArrayList<MarkerData>();
 
         MarkerData m1 = new MarkerData();
@@ -88,22 +77,14 @@ public class StoresActivity extends BaseActivity implements OnMapReadyCallback {
         m6.setTitle("BP (Gas Station), Carer de Joan Guell");
         markersArray.add(m6);
 
-//        Projection projection = googleMap.getProjection();
-//        LatLng markerPosition = marker.getPosition();
-//        Point markerPoint = projection.toScreenLocation(markerPosition);
-//        Point targetPoint = new Point(markerPoint.x, markerPoint.y - view.getHeight() / 2);
-//        LatLng targetPosition = projection.fromScreenLocation(targetPoint);
-//        googleMap.animateCamera(CameraUpdateFactory.newLatLng(targetPosition), 1000, null);
-//
-//        LatLng coordinate = new LatLng(lat, lng); //Store these lat lng values somewhere. These should be constant.
-//        CameraUpdate location = CameraUpdateFactory.newLatLngZoom(
-//                coordinate, 15);
-//        mMap.animateCamera(location);
-
-        for(int i = 0 ; i < markersArray.size() ; i++) {
-
+        for (int i = 0; i < markersArray.size(); i++) {
             createMarker(markersArray.get(i).getLatitude(), markersArray.get(i).getLongitude(), markersArray.get(i).getTitle(), markersArray.get(i).getSnippet(), markersArray.get(i).getIconResID());
         }
+
+        LatLng coordinate = new LatLng(41.38781684787928, 2.130002148155966); //Store these lat lng values somewhere. These should be constant.
+        CameraUpdate location = CameraUpdateFactory.newLatLngZoom(
+                coordinate, 12);
+        googleMap.animateCamera(location);
 
     }
 

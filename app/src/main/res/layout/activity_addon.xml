@@ -135,7 +135,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginHorizontal="10dp"
                 android:layout_weight="1"
-                android:backgroundTint="@color/purple_700"
+                android:backgroundTint="@color/black"
                 android:text="@string/skip"
                 android:textColor="@color/white" />
 
@@ -146,7 +146,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginHorizontal="10dp"
                 android:layout_weight="1"
-                android:backgroundTint="@color/purple_700"
+                android:backgroundTint="@color/black"
                 android:text="@string/proceed"
                 android:textColor="@color/white" />
 

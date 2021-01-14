@@ -3,7 +3,6 @@ package com.example.nestledemo.ui.components.home;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -24,7 +23,8 @@ import com.example.nestledemo.ui.components.login.LoginActivity;
 import com.example.nestledemo.ui.components.profile.ProfileActivity;
 import com.example.nestledemo.ui.components.rewards.RewardsActivity;
 import com.example.nestledemo.ui.components.social.SocialActivity;
-import com.example.nestledemo.ui.components.stores.StoresActivity;
+import com.example.nestledemo.ui.components.stores.NearByStoresActivity;
+import com.example.nestledemo.ui.components.webview.WebViewActivity;
 import com.example.nestledemo.utils.PrefUtils;
 import com.google.android.material.navigation.NavigationView;
 
@@ -77,8 +77,8 @@ public class HomeActivity extends AppCompatActivity implements HomeAdapter.HomeL
         profileNameTV.setText(name);
 
         setUpNavigationView();
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED || ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_DENIED)  {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA,Manifest.permission.ACCESS_COARSE_LOCATION}, requestCode);
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED || ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_DENIED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA, Manifest.permission.ACCESS_COARSE_LOCATION}, requestCode);
         }
 
         initAdapter();
@@ -135,7 +135,7 @@ public class HomeActivity extends AppCompatActivity implements HomeAdapter.HomeL
                     case R.id.nav_stores:
                         navItemIndex = 3;
                         CURRENT_TAG = TAG_STORES;
-                        startActivity(new Intent(HomeActivity.this, StoresActivity.class));
+                        startActivity(new Intent(HomeActivity.this, NearByStoresActivity.class));
                         break;
                     case R.id.nav_social:
                         navItemIndex = 4;
@@ -144,11 +144,13 @@ public class HomeActivity extends AppCompatActivity implements HomeAdapter.HomeL
                         break;
                     case R.id.nav_about_us:
                         drawerLayout.closeDrawers();
-                        startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://www.nestle.com/")));
+                        startActivity(new Intent(HomeActivity.this, WebViewActivity.class)
+                                .putExtra("URL", "https://www.nestle.com/"));
                         return true;
                     case R.id.nav_privacy_policy:
                         drawerLayout.closeDrawers();
-                        startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://www.nestle.com/aboutus/businessprinciples/privacy")));
+                        startActivity(new Intent(HomeActivity.this, WebViewActivity.class)
+                                .putExtra("URL", "https://www.nestle.com/aboutus/businessprinciples/privacy"));
                         return true;
                     case R.id.nav_logout:
                         drawerLayout.closeDrawers();

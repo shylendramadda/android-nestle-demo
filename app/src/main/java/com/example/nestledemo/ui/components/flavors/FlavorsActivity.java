@@ -82,8 +82,10 @@ public class FlavorsActivity extends BaseActivity implements FlavorAdapter.Flavo
                 AppUtils.showToast(this, "Please select your choice");
             } else {
                 dialog.dismiss();
-                AppUtils.showToast(this, "Selected " + radioButton.getText());
-                startActivity(new Intent(FlavorsActivity.this, AddonActivity.class));
+                String selectedSize = radioButton.getText().toString();
+                AppUtils.showToast(this, "Selected " + selectedSize);
+                startActivity(new Intent(FlavorsActivity.this, AddonActivity.class)
+                        .putExtra("selectedSize", selectedSize));
             }
         });
         dialog.show();

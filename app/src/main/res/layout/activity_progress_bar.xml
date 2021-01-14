@@ -48,8 +48,10 @@
         android:layout_marginStart="112dp"
         android:layout_marginTop="379dp"
         android:layout_marginEnd="112dp"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/black"
         android:layout_marginBottom="304dp"
-        android:text="start your coffee"
+        android:text="@string/start_your_coffee"
         android:visibility="visible" />
 
 </RelativeLayout>

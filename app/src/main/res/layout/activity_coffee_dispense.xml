@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/byoc_background"
+    android:background="@color/black"
     tools:context=".ui.components.coffeedispense.CoffeeDispenseActivity">
 
     <LinearLayout
@@ -13,35 +13,39 @@
 
         <ImageView
             android:id="@+id/cupIV"
-            android:layout_width="250dp"
-            android:layout_height="140dp"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
             android:layout_gravity="center"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp"
             android:scaleType="fitXY"
-            android:src="@drawable/coffeeloading"
+            android:src="@drawable/cappucino"
             tools:ignore="ContentDescription" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="20dp"
-            android:textSize="20sp"
-            android:textStyle="bold"
+            android:text="@string/dispense_hint"
             android:textColor="@color/red"
-            android:text="@string/dispense_hint" />
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/btnStartDispense"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
-            android:backgroundTint="@color/teal_700"
-            android:text="@string/start_to_dispense" />
+            android:backgroundTint="@color/white"
+            android:text="@string/start_to_dispense"
+            android:textColor="@color/black" />
 
         <RelativeLayout
             android:id="@+id/progressRL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="gone">
+            android:visibility="gone"
+            tools:visibility="visible">
 
             <ProgressBar
                 android:id="@+id/progressBar"
@@ -64,6 +68,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/progressBar"
                 android:layout_alignStart="@+id/progressBar"
+                android:textColor="@color/white"
+                android:textSize="16sp"
                 tools:text="1/100" />
 
             <ProgressBar
@@ -73,6 +79,7 @@
                 android:layout_below="@+id/tvProgress"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
+                android:layout_marginTop="20dp"
                 android:minWidth="50dp"
                 android:minHeight="50dp" />
 

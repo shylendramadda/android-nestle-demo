@@ -13,9 +13,12 @@ import butterknife.OnClick;
 
 public class AddonActivity extends BaseActivity {
 
+    private String selectedSize = "small";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        selectedSize = getIntent().getStringExtra("selectedSize");
     }
 
     @Override
@@ -48,12 +51,14 @@ public class AddonActivity extends BaseActivity {
     @OnClick(R.id.btnSkipPromo)
     void onSkip() {
         Toast.makeText(getApplicationContext(), "You have skipped the Promo", Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(this, PaymentActivity.class));
+        startActivity(new Intent(this, PaymentActivity.class)
+        .putExtra("selectedSize", selectedSize));
     }
 
     @OnClick(R.id.btnAdd)
     void onProceed() {
         Toast.makeText(getApplicationContext(), "You have added the Promo", Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(this, PaymentActivity.class));
+        startActivity(new Intent(this, PaymentActivity.class)
+                .putExtra("selectedSize", selectedSize));
     }
 }
