@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 
     <application
         android:allowBackup="false"
@@ -16,6 +17,10 @@
         <activity android:name=".ui.components.social.SocialActivity"/>
         <activity android:name=".ui.components.stores.StoresActivity" />
         <activity android:name=".ui.components.coffeedispense.CoffeeDispenseActivity" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

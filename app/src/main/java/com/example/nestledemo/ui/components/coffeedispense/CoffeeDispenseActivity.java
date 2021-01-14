@@ -57,11 +57,11 @@ public class CoffeeDispenseActivity extends BaseActivity {
                 }
                 handler.post(() -> {
                     progressBar.setProgress(status);
-                    String statusText = "Dispensing your coffee please wait... " + status + "/100%";
+                    String statusText = "Dispensing your coffee, please wait... " + status + "/100%";
                     tvProgressStatus.setText(statusText);
                     if (status == 100) {
                         AppUtils.hideViews(progressBarCyclic);
-                        AppUtils.showToast(CoffeeDispenseActivity.this, "Done please take your coffee");
+                        AppUtils.showToast(CoffeeDispenseActivity.this, "Your coffee is filled, please take your cup");
                         showAlert();
                     }
                 });
@@ -73,10 +73,10 @@ public class CoffeeDispenseActivity extends BaseActivity {
         //Setting message manually and performing action on button click
         builder = new AlertDialog.Builder(this);
         builder.setTitle("Success")
-                .setMessage("Take the cup and have a great coffee")
+                .setMessage("Thank you for having Nestle Coffee!! See you again. ")
                 .setCancelable(false)
 //                .setPositiveButton("Thank you", (dialog, id) -> finish())
-                .setNegativeButton("Thank you!", (dialog, id) -> {
+                .setNegativeButton("Have a Good one!", (dialog, id) -> {
                     dialog.cancel();
                     startActivity(new Intent(this, HomeActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
                     finish();

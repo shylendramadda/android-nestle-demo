@@ -73,7 +73,7 @@ public class PaymentActivity extends BaseActivity {
         } else if (cardCVV.length() != 3) {
             AppUtils.showToast(this, "Please Enter valid CVV");
         } else {
-            AppUtils.showToast(this, "Card added Successfully");
+            AppUtils.showToast(this, "Payment Approved");
             startActivity(new Intent(this, CoffeeDispenseActivity.class));
         }
     }

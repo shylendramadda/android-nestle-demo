@@ -77,9 +77,10 @@ public class HomeActivity extends AppCompatActivity implements HomeAdapter.HomeL
         profileNameTV.setText(name);
 
         setUpNavigationView();
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED) {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, requestCode);
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED || ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_DENIED)  {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA,Manifest.permission.ACCESS_COARSE_LOCATION}, requestCode);
         }
+
         initAdapter();
     }
 
@@ -91,14 +92,16 @@ public class HomeActivity extends AppCompatActivity implements HomeAdapter.HomeL
     }
 
     private void loadDashboardItems() {
-        DashboardItem item1 = new DashboardItem("Cappucino1", R.drawable.cappucino);
-        DashboardItem item2 = new DashboardItem("Cappucino2", R.drawable.cappucino);
-        DashboardItem item3 = new DashboardItem("Cappucino3", R.drawable.cappucino);
-        DashboardItem item4 = new DashboardItem("Cappucino4", R.drawable.cappucino);
+        DashboardItem item1 = new DashboardItem("New look but same taste!", R.drawable.nescafe);
+        DashboardItem item2 = new DashboardItem("Improve your health and increase Fitness.", R.drawable.fitnesscereal);
+        DashboardItem item3 = new DashboardItem("Perfect start to Power up your day!", R.drawable.milo);
+        DashboardItem item4 = new DashboardItem("Grab a snack during a break!", R.drawable.neschoc);
+        DashboardItem item5 = new DashboardItem("Wanna get Ice with some great flavours? Grab one now!", R.drawable.nesicreams);
         dashboardList.add(item1);
         dashboardList.add(item2);
         dashboardList.add(item3);
         dashboardList.add(item4);
+        dashboardList.add(item5);
         //to refresh adapter
         homeAdapter.notifyDataSetChanged();
     }

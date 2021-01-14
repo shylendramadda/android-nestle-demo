@@ -20,10 +20,10 @@ public class AddonActivity extends BaseActivity {
 
     @Override
     protected int getLayoutResourceId() {
-        return R.layout.activity_addon;
+        return R.layout.activity_promo;
     }
 
-    @OnClick(R.id.referLL)
+    @OnClick(R.id.btnIncrease)
     void onReferClick() {
         Intent sendIntent = new Intent();
         sendIntent.setAction(Intent.ACTION_SEND);
@@ -33,15 +33,27 @@ public class AddonActivity extends BaseActivity {
         startActivity(sendIntent);
     }
 
-    @OnClick(R.id.btnSkip)
+    @OnClick(R.id.iBCrossAdd)
+    void onButtonAdd(){
+        Intent addIntent = new Intent();
+        Toast.makeText(getApplicationContext(),"You have availed this Promo",Toast.LENGTH_SHORT).show();
+    }
+
+    @OnClick(R.id.ibDiscount)
+    void onButtonDisc(){
+        Intent onButtonDisc = new Intent();
+        Toast.makeText(getApplicationContext(),"You have availed this Promo",Toast.LENGTH_SHORT).show();
+    }
+
+    @OnClick(R.id.btnSkipPromo)
     void onSkip() {
-        Toast.makeText(getApplicationContext(), "You have skipped the UpSale", Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "You have skipped the Promo", Toast.LENGTH_SHORT).show();
         startActivity(new Intent(this, PaymentActivity.class));
     }
 
-    @OnClick(R.id.btnProceed)
+    @OnClick(R.id.btnAdd)
     void onProceed() {
-        Toast.makeText(getApplicationContext(), "You have added the UpSale", Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "You have added the Promo", Toast.LENGTH_SHORT).show();
         startActivity(new Intent(this, PaymentActivity.class));
     }
 }

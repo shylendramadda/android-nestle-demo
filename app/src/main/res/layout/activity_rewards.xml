@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/nestle_background"
     tools:context=".ui.components.rewards.RewardsActivity">
 
     <TextView
@@ -35,12 +36,14 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+
     <Button
         android:id="@+id/btApply"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/etPromoTIL"
         android:layout_alignParentEnd="true"
+        android:backgroundTint="@color/teal_700"
         android:layout_marginHorizontal="20dp"
         android:padding="10dp"
         android:text="@string/apply" />
@@ -115,11 +118,36 @@
         android:textColor="@color/black"
         tools:ignore="Autofill,LabelFor,TextFields" />
 
+    <ImageButton
+        android:id="@+id/ibTotal"
+        android:layout_width="90dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/ibInStore"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/ic_loyalty"
+        tools:ignore="ContentDescription" />
+
+    <EditText
+        android:id="@+id/etTotal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pointsET"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@+id/ibTotal"
+        android:backgroundTint="@color/black"
+        android:text="@string/total"
+        android:textColor="@color/black"
+        tools:ignore="Autofill,LabelFor,TextFields" />
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/pointsET"
+        android:layout_below="@+id/etTotal"
         android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
         android:clickable="true"
         android:focusable="true"
         android:text="@string/check_more_about_loyalty_rewards_at_https_www_nestle_com"
