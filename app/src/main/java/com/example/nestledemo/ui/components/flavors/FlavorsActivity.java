@@ -11,7 +11,6 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -26,7 +25,7 @@ import java.util.List;
 
 import butterknife.BindView;
 
-public class FlavorsActivity extends BaseActivity implements FlavorAdapter.FlavorListener, AdapterView.OnItemClickListener {
+public class FlavorsActivity extends BaseActivity implements FlavorAdapter.FlavorListener, AdapterView.OnItemSelectedListener {
 
     @BindView(R.id.rvFlavors)
     RecyclerView rvFlavors;
@@ -85,11 +84,10 @@ public class FlavorsActivity extends BaseActivity implements FlavorAdapter.Flavo
         milkTypes.add("Soy Milk");
         milkTypes.add("Almond Milk");
 
-
         Button btnSubmit = dialog.findViewById(R.id.btnSubmit);
         RadioGroup rdGroup = dialog.findViewById(R.id.rdGroup);
-        Spinner spinner =  dialog.findViewById(R.id.spinner);
-//        spinner.setOnItemClickListener(this);
+        Spinner spinner = dialog.findViewById(R.id.spinner);
+        spinner.setOnItemSelectedListener(this);
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, milkTypes);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(dataAdapter);
@@ -112,14 +110,18 @@ public class FlavorsActivity extends BaseActivity implements FlavorAdapter.Flavo
     }
 
     @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        String item = parent.getItemAtPosition(position).toString();
-        Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
+    public void onPointerCaptureChanged(boolean hasCapture) {
 
     }
 
     @Override
-    public void onPointerCaptureChanged(boolean hasCapture) {
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        String selectedItem = parent.getItemAtPosition(position).toString();
+        AppUtils.showToast(this, "Selected: " + selectedItem);
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
 
     }
 }
