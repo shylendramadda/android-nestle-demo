@@ -45,11 +45,13 @@ public class LoginActivity extends BaseActivity {
 
     @OnClick(R.id.btnLogin)
     void onLoginClick() {
+
         mobileNumber = etMobile.getText().toString();
         if (mobileNumber.isEmpty()) {
             AppUtils.showToast(this, "Please Enter mobile number");
         } else if (mobileNumber.length() != 13) {
             AppUtils.showToast(this, "Please Enter valid mobile number");
+
         } else {
             // After validation of mobile number
             otp = (int) (Math.random() * 9000) + 1000;

@@ -96,7 +96,7 @@ public class HomeActivity extends AppCompatActivity implements HomeAdapter.HomeL
         DashboardItem item2 = new DashboardItem("Improve your health and increase Fitness.", R.drawable.fitnesscereal);
         DashboardItem item3 = new DashboardItem("Perfect start to Power up your day!", R.drawable.milo);
         DashboardItem item4 = new DashboardItem("Grab a snack during a break!", R.drawable.neschoc);
-        DashboardItem item5 = new DashboardItem("Wanna get Ice with some great flavours? Grab one now!", R.drawable.nesicreams);
+        DashboardItem item5 = new DashboardItem("Wanna get Ice with some great flavours? Grab one now!", R.drawable.nestle_icecreams);
         dashboardList.add(item1);
         dashboardList.add(item2);
         dashboardList.add(item3);

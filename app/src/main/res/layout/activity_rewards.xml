@@ -3,14 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/nestle_background"
+    android:background="@drawable/background_image"
     android:orientation="vertical"
     tools:context=".ui.components.rewards.RewardsActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/nestle_background"
         android:orientation="vertical">
 
         <TextView
@@ -21,7 +20,7 @@
             android:layout_marginStart="50dp"
             android:text="@string/view_all_your_nestle_reward_points_here"
             android:textAllCaps="true"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="15sp"
             android:textStyle="bold" />
 
@@ -63,7 +62,7 @@
             android:layout_marginHorizontal="20dp"
             android:text="@string/refer_and_earn_points"
             android:textAllCaps="true"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold" />
 

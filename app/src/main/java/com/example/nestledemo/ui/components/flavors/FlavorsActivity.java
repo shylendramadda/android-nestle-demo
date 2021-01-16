@@ -3,10 +3,15 @@ package com.example.nestledemo.ui.components.flavors;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -21,7 +26,7 @@ import java.util.List;
 
 import butterknife.BindView;
 
-public class FlavorsActivity extends BaseActivity implements FlavorAdapter.FlavorListener {
+public class FlavorsActivity extends BaseActivity implements FlavorAdapter.FlavorListener, AdapterView.OnItemClickListener {
 
     @BindView(R.id.rvFlavors)
     RecyclerView rvFlavors;
@@ -55,6 +60,7 @@ public class FlavorsActivity extends BaseActivity implements FlavorAdapter.Flavo
         flavorAdapter.notifyDataSetChanged();
     }
 
+
     @Override
     protected int getLayoutResourceId() {
         return R.layout.activity_flavors;
@@ -63,7 +69,7 @@ public class FlavorsActivity extends BaseActivity implements FlavorAdapter.Flavo
     @Override
     public void onItemSelected(int position) {
         Flavor selectedFlavor = flavorList.get(position);
-        AppUtils.showToast(this, "You selected " + selectedFlavor.getName());
+        AppUtils.showToast(this, "You have selected " + selectedFlavor.getName());
         showSizeDialog();
     }
 
@@ -73,11 +79,24 @@ public class FlavorsActivity extends BaseActivity implements FlavorAdapter.Flavo
         dialog.setCancelable(true);
         dialog.setContentView(R.layout.custom_dialog_cup_size);
 
-        Button btnSubmit = (Button) dialog.findViewById(R.id.btnSubmit);
-        RadioGroup rdGroup = (RadioGroup) dialog.findViewById(R.id.rdGroup);
+        List<String> milkTypes = new ArrayList<>();
+        milkTypes.add("Full Cream Milk");
+        milkTypes.add("Low Fat Milk");
+        milkTypes.add("Soy Milk");
+        milkTypes.add("Almond Milk");
+
+
+        Button btnSubmit = dialog.findViewById(R.id.btnSubmit);
+        RadioGroup rdGroup = dialog.findViewById(R.id.rdGroup);
+        Spinner spinner =  dialog.findViewById(R.id.spinner);
+//        spinner.setOnItemClickListener(this);
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, milkTypes);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(dataAdapter);
+
         btnSubmit.setOnClickListener(v -> {
             int selectedId = rdGroup.getCheckedRadioButtonId();
-            RadioButton radioButton = (RadioButton) dialog.findViewById(selectedId);
+            RadioButton radioButton = dialog.findViewById(selectedId);
             if (selectedId == -1) {
                 AppUtils.showToast(this, "Please select your choice");
             } else {
@@ -87,7 +106,20 @@ public class FlavorsActivity extends BaseActivity implements FlavorAdapter.Flavo
                 startActivity(new Intent(FlavorsActivity.this, AddonActivity.class)
                         .putExtra("selectedSize", selectedSize));
             }
+
         });
         dialog.show();
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        String item = parent.getItemAtPosition(position).toString();
+        Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
+
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
     }
 }

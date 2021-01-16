@@ -69,6 +69,8 @@ public class CoffeeDispenseActivity extends BaseActivity {
         }).start();
     }
 
+
+
     private void showAlert() {
         //Setting message manually and performing action on button click
         builder = new AlertDialog.Builder(this);

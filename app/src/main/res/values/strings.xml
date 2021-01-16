@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">NestleDemo</string>
+    <string name="app_name">SUPER</string>
     <string name="title_activity_home_page">HomePage</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -13,7 +13,6 @@
     <string name="show_password">Show Password</string>
     <string name="todo">TODO</string>
     <string name="welcome">Welcome to Nestle Coffee Portal! Prepare your taste buds to experience the delicious flavours.</string>
-    <string name="mobile_number">Mobile Number</string>
     <string name="enter_otp">Enter OTP</string>
     <string name="send_otp">Send OTP</string>
     <string name="validate_otp">Validate OTP</string>
@@ -26,7 +25,7 @@
     <string name="submit">Submit</string>
     <string name="full_name">Full Name</string>
     <string name="email">Email Id</string>
-    <string name="address">Address</string>
+    <string name="address">Street Address</string>
     <string name="other">Other</string>
     <string name="nav_rewards">Rewards</string>
     <string name="nav_stores">Near by stores</string>
@@ -34,7 +33,7 @@
     <string name="rewards">Rewards</string>
     <string name="reward_points">Reward points</string>
     <string name="flavors">Flavors</string>
-    <string name="up_sale">Up Sale</string>
+    <string name="up_sale">Promotional Offers</string>
     <string name="grab_a_crossiant_for_1_dollar">Grab a Crossiant for $1!</string>
     <string name="limited_time_only">Limited time only!!</string>
     <string name="get_discount_for_gas">Get Discount for gas.</string>
@@ -46,7 +45,7 @@
     <string name="skip">Skip</string>
     <string name="proceed">Proceed</string>
     <string name="payment">Payment</string>
-    <string name="master_card">Master Card</string>
+    <string name="master_card">Credit Card</string>
     <string name="google_pay">Google Pay</string>
     <string name="apple_pay">Apple Pay</string>
     <string name="card_details">Card Details</string>
@@ -75,19 +74,19 @@
     <string name="post_something">Post Something..</string>
     <string name="upload">upload</string>
     <string name="post">Post</string>
-    <string name="user1">User1</string>
+    <string name="user1">Erik Sanchez</string>
     <string name="postsmtg">Post Something...</string>
     <string name="userContent1">Good day folks! Had an amazing Nescafe near Camp Nuo. I know Nescafe always is the best coffee ever!</string>
     <string name="google_maps_key">AIzaSyCeXXrAzu_U_ECVDExmbqfqVleW7Op_14g</string>
     <string name="comment">comments</string>
     <string name="share">Share</string>
-    <string name="user2">User 2</string>
+    <string name="user2">Phillipe Torres </string>
     <string name="likes1">20 Likes</string>
     <string name="likes2">79 Likes</string>
     <string name="likes3">108 Likes</string>
-    <string name="userContent2">What a day! I was exhausted, saw a Nestle Store near La Rambla and quickly got in to grab my favourite Oreo Ice-Cream. I\'m relieved now.</string>
+    <string name="userContent2">What a day! I was exhausted, saw a Nestle Store near La Rambla and quickly got in to grab my favourite Kitkat Ice-Cream. I\'m relieved now.</string>
     <string name="userContent3">I filled my gas at BP Sant Antoni and got a 10% discount from Nestle as I bought a delicious coffee in store. Thank you Nestle! :)</string>
-    <string name="user3">User 3</string>
+    <string name="user3">Marta Diaz</string>
     <string name="tvPromo">Promotional Offers</string>
     <string name="addSnack">Want to add a snack on the go with your coffee? Grab a Croissant just for $1! Only for today! </string>
     <string name="increase_rewards">  Increase your Reward Points by sharing this app to your near and dear.</string>
@@ -102,4 +101,21 @@
     <string name="signup">Signup</string>
     <string name="start_your_coffee">start your coffee</string>
     <string name="comments_5">5 Comments</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="post_code">Post Code</string>
+    <string name="landmark">Landmark</string>
+    <string name="profile">PROFILE</string>
+    <string name="spinner_title">Milk</string>
+    <string name="milk_type">Select Milk Type:</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="gender">Gender</string>
+    <string name="unit_flat_number">Unit/Flat Number</string>
+    <string name="street_name">Street Name</string>
+    <string name="suburb">Suburb</string>
+    <string name="state">State</string>
+    <string name="country">Country</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="update">update</string>
 </resources>

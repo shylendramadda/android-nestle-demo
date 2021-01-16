@@ -49,6 +49,31 @@
             android:text="@string/large_3" />
     </RadioGroup>
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:layout_marginHorizontal="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvSelect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/milk_type"
+            android:layout_marginBottom="5dp"/>
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:prompt="@string/spinner_title"/>
+
+    </LinearLayout>
+
+
+
     <Button
         android:id="@+id/btnSubmit"
         android:layout_width="wrap_content"

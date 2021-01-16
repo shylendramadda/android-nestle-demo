@@ -39,25 +39,25 @@ public class AddonActivity extends BaseActivity {
     @OnClick(R.id.iBCrossAdd)
     void onButtonAdd(){
         Intent addIntent = new Intent();
-        Toast.makeText(getApplicationContext(),"You have availed this Promo",Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(),"You have added Croissant, Enjoy!",Toast.LENGTH_LONG).show();
     }
 
     @OnClick(R.id.ibDiscount)
     void onButtonDisc(){
         Intent onButtonDisc = new Intent();
-        Toast.makeText(getApplicationContext(),"You have availed this Promo",Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(),"You have availed this Promo",Toast.LENGTH_LONG).show();
     }
 
     @OnClick(R.id.btnSkipPromo)
     void onSkip() {
-        Toast.makeText(getApplicationContext(), "You have skipped the Promo", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "You did not select any add-on", Toast.LENGTH_LONG).show();
         startActivity(new Intent(this, PaymentActivity.class)
         .putExtra("selectedSize", selectedSize));
     }
 
     @OnClick(R.id.btnAdd)
     void onProceed() {
-        Toast.makeText(getApplicationContext(), "You have added the Promo", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "You have added the Promo", Toast.LENGTH_LONG).show();
         startActivity(new Intent(this, PaymentActivity.class)
                 .putExtra("selectedSize", selectedSize));
     }

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/coffeebackground"
+    android:background="@drawable/nestle_splash"
     android:orientation="vertical"
     tools:context=".ui.components.splash.SplashActivity"
     tools:ignore="UseCompoundDrawables">
@@ -22,11 +22,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_centerVertical="true"
         android:text="@string/app_name"
+        android:layout_marginTop="240dp"
         android:textColor="@color/white"
-        android:textSize="56sp" />
+        android:textStyle="bold|italic"
+        android:textSize="46sp" />
 
     <TextView
         android:layout_width="wrap_content"
